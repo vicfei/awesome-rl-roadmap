@@ -27,7 +27,7 @@ RL learning material is split in two halves that barely touch:
 
 This repo is the bridge. It strings both eras into one executable path, curated with a single criterion — *usefulness to a practicing engineer* — so every entry states **where it sits in your journey**.
 
-> v0.1 · 80+ curated entries, kept current by the daily [arXiv digest](digest/README.md).
+> v0.1 · 80+ curated entries + companion derivations, kept current by the daily [arXiv digest](digest/README.md).
 
 ## Roadmap at a glance
 
@@ -93,6 +93,7 @@ flowchart TD
 
 **📚 Read**
 
+- 📝 [This repo's companion notes: a complete derivation of the Bellman equations](docs/bellman-equations.md) — expectation and optimality equations from first principles, with every hidden premise (stationary policy, time homogeneity, the optimality principle) made explicit.
 - [Mushook / easy-rl](https://github.com/datawhalechina/easy-rl) (⭐14.7k, Chinese) — the best Chinese-language entry point. Chapters 1–6 cover this entire stage; based on Hung-yi Lee's course, with PDFs and Bilibili videos.
 - [Sutton & Barto, *Reinforcement Learning: An Introduction*](http://incompleteideas.net/book/the-book-2nd.html) (free official PDF) — read ch. 3–6 closely (MDP/DP/TD), ch. 13 (policy gradient) selectively. The bible — but don't read it cover to cover first.
 - [David Silver's UCL course](https://www.davidsilver.uk/teaching/) — the classic video course; lectures 1–7 map to this stage.

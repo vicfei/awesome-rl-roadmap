@@ -26,7 +26,7 @@
 
 本仓库是一座桥：以"工程师能上手"为唯一标准，把两个时代串成一条可执行的学习路径。它不是又一篇论文堆砌，每个条目都标注了**它在你旅程中的位置**。
 
-> v0.1 · 收录 80+ 条精选资源，每日随 [arXiv 日报](digest/README.md) 持续更新。
+> v0.1 · 收录 80+ 条精选资源 + 配套数学推导，每日随 [arXiv 日报](digest/README.md) 持续更新。
 
 ## 路线图总览
 
@@ -92,6 +92,7 @@ flowchart TD
 
 **📚 读**
 
+- 📝 [本仓库配套讲义：贝尔曼方程完整推导](docs/bellman-equations.zh-CN.md) — 从定义出发逐步推得期望方程与最优方程，每处隐藏前提（平稳策略、时齐性、最优性原理）都显式标注。
 - [蘑菇书 easy-rl](https://github.com/datawhalechina/easy-rl)（⭐14.7k，中文）— 中文首选。第 1–6 章覆盖本阶段全部内容，源自李宏毅课程，配套 PDF 与 B 站视频。
 - [Sutton & Barto《Reinforcement Learning: An Introduction》](http://incompleteideas.net/book/the-book-2nd.html)（免费官方 PDF）— 第 3–6 章（MDP/DP/TD）精读，第 13 章（policy gradient）选读。圣经，但不必一口气读完。
 - [David Silver UCL 课程](https://www.davidsilver.uk/teaching/) — RL 入门的经典视频课，前 7 讲对应本阶段。
