@@ -27,7 +27,7 @@ RL learning material is split in two halves that barely touch:
 
 This repo is the bridge. It strings both eras into one executable path, curated with a single criterion — *usefulness to a practicing engineer* — so every entry states **where it sits in your journey**.
 
-> v0.1 · 80+ curated entries + companion derivations, kept current by the daily [arXiv digest](digest/README.md).
+> v0.1 · 80+ curated entries + companion derivations & runnable examples, kept current by the daily [arXiv digest](digest/README.md).
 
 ## Roadmap at a glance
 
@@ -101,6 +101,7 @@ flowchart TD
 
 **⚡ Run**
 
+- 🧪 [This repo's runnable example: GridWorld value/policy iteration](examples/stage1_gridworld.py) — single file, numpy only; turns the Bellman equations from the companion notes into running code, with the Bellman-optimality residual as the convergence verdict (and a live demo that V* is unique while π* is not).
 - [norhum/reinforcement-learning-from-scratch](https://github.com/norhum/reinforcement-learning-from-scratch) — five notebooks from bandits (ε-greedy/UCB) to A2C; a weekend's worth.
 - [Mushook notebooks](https://github.com/datawhalechina/easy-rl/tree/master/notebooks) — Chinese-commented implementations of Value Iteration / Q-learning / Sarsa / Policy Gradient.
 - [Gymnasium](https://gymnasium.farama.org/) — the standard RL environment library; CartPole is your "Hello World".

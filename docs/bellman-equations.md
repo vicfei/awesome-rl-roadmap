@@ -292,6 +292,7 @@ This is the theoretical foundation of Q-learning and its relatives — the updat
 
 ## Further reading
 
+- [Companion runnable example: GridWorld value/policy iteration](../examples/stage1_gridworld.py) — this derivation turned into code (evaluation = iterating the expectation equation, value iteration = iterating the optimality equation, improvement = the max), with a proper-policy guard and Bellman-residual checks.
 - [Sutton & Barto, ch. 3–4](http://incompleteideas.net/book/the-book-2nd.html) — the canonical reference for this derivation.
 - [The Mushook, ch. 3–4](https://github.com/datawhalechina/easy-rl) (Chinese) — a companion walk-through.
 - Roadmap [Stage 1](../README.md#stage-1--classic-rl-foundations-1-2-weeks) (where these notes live) and [Stage 2](../README.md#stage-2--deep-rl-master-ppo-1-2-weeks) (where the Bellman equations meet PPO).

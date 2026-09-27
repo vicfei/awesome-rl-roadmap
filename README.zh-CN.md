@@ -26,7 +26,7 @@
 
 本仓库是一座桥：以"工程师能上手"为唯一标准，把两个时代串成一条可执行的学习路径。它不是又一篇论文堆砌，每个条目都标注了**它在你旅程中的位置**。
 
-> v0.1 · 收录 80+ 条精选资源 + 配套数学推导，每日随 [arXiv 日报](digest/README.md) 持续更新。
+> v0.1 · 收录 80+ 条精选资源 + 配套推导与可运行示例，每日随 [arXiv 日报](digest/README.md) 持续更新。
 
 ## 路线图总览
 
@@ -100,6 +100,7 @@ flowchart TD
 
 **⚡ 跑**
 
+- 🧪 [本仓库配套示例：GridWorld 值迭代/策略迭代](examples/stage1_gridworld.py) — 单文件、仅依赖 numpy，把配套讲义里的贝尔曼方程变成可运行代码；收敛判定用贝尔曼最优性残差（顺带演示 V\* 唯一而 π\* 不唯一）。
 - [norhum/reinforcement-learning-from-scratch](https://github.com/norhum/reinforcement-learning-from-scratch) — 5 个 notebook 从多臂老虎机（ε-greedy/UCB）一路到 A2C，一个周末跑完。
 - [蘑菇书 notebooks](https://github.com/datawhalechina/easy-rl/tree/master/notebooks) — Value Iteration / Q-learning / Sarsa / Policy Gradient 的中文注释实现。
 - [Gymnasium](https://gymnasium.farama.org/) — 标准 RL 环境库，CartPole 是你的 "Hello World"。

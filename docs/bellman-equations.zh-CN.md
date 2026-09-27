@@ -320,6 +320,7 @@ $$
 
 ## 延伸阅读
 
+- [配套可运行示例：GridWorld 值迭代/策略迭代](../examples/stage1_gridworld.py)——本推导的算法化身（评估 = 期望方程迭代、值迭代 = 最优方程迭代、改进 = max），含 proper-policy 防护与贝尔曼残差检验。
 - [Sutton & Barto 第 3–4 章](http://incompleteideas.net/book/the-book-2nd.html)——本推导的标准参照。
 - [蘑菇书第 3–4 章](https://github.com/datawhalechina/easy-rl)——中文对照讲解。
 - 路线图 [Stage 1](../README.zh-CN.md#stage-1--经典-rl-基础12-周)（本讲义的位置）与 [Stage 2](../README.zh-CN.md#stage-2--深度-rl把-ppo-吃透12-周)（贝尔曼方程在 PPO 中的用武之地）。
