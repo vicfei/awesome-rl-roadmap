@@ -11,7 +11,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![arXiv digest](https://img.shields.io/badge/arXiv%20digest-weekly-blue.svg)](digest/README.md)
+[![arXiv digest](https://img.shields.io/badge/arXiv%20digest-daily-blue.svg)](digest/README.md)
 
 </div>
 
@@ -26,7 +26,7 @@
 
 本仓库是一座桥：以"工程师能上手"为唯一标准，把两个时代串成一条可执行的学习路径。它不是又一篇论文堆砌，每个条目都标注了**它在你旅程中的位置**。
 
-> v0.1 · 收录 80+ 条精选资源，每周随 [arXiv 周报](digest/README.md) 持续更新。
+> v0.1 · 收录 80+ 条精选资源，每日随 [arXiv 日报](digest/README.md) 持续更新。
 
 ## 路线图总览
 
@@ -205,7 +205,7 @@ flowchart TD
 
 ## 保持前沿
 
-- **本仓库 [arXiv 周报](digest/README.md)** — 每周自动抓取 RL-for-LLM 新论文，带关键词标签，周一更新。
+- **本仓库 [arXiv 日报](digest/README.md)** — 每个工作日自动抓取 RL-for-LLM 新论文，带关键词标签、按周累积成档。
 - [opendilab/awesome-RLHF](https://github.com/opendilab/awesome-RLHF)（⭐4.4k）— 对齐方向论文最全索引。
 - [opendilab/awesome-RLVR](https://github.com/opendilab/awesome-RLVR) — 可验证奖励方向。
 - [AgentsMeetRL](https://github.com/thinkwee/AgentsMeetRL) — agentic 方向。

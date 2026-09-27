@@ -12,7 +12,7 @@ English · [简体中文](README.zh-CN.md)
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![arXiv digest](https://img.shields.io/badge/arXiv%20digest-weekly-blue.svg)](digest/README.md)
+[![arXiv digest](https://img.shields.io/badge/arXiv%20digest-daily-blue.svg)](digest/README.md)
 
 </div>
 
@@ -27,7 +27,7 @@ RL learning material is split in two halves that barely touch:
 
 This repo is the bridge. It strings both eras into one executable path, curated with a single criterion — *usefulness to a practicing engineer* — so every entry states **where it sits in your journey**.
 
-> v0.1 · 80+ curated entries, growing weekly with the [arXiv digest](digest/README.md).
+> v0.1 · 80+ curated entries, kept current by the daily [arXiv digest](digest/README.md).
 
 ## Roadmap at a glance
 
@@ -206,7 +206,7 @@ flowchart TD
 
 ## Stay current
 
-- **This repo's [arXiv digest](digest/README.md)** — auto-collected RL-for-LLM papers weekly, keyword-tagged, updated Mondays.
+- **This repo's [arXiv digest](digest/README.md)** — auto-collected RL-for-LLM papers every weekday, keyword-tagged, one cumulative file per week.
 - [opendilab/awesome-RLHF](https://github.com/opendilab/awesome-RLHF) (⭐4.4k) — the most complete alignment-paper index.
 - [opendilab/awesome-RLVR](https://github.com/opendilab/awesome-RLVR) — the verifiable-rewards direction.
 - [AgentsMeetRL](https://github.com/thinkwee/AgentsMeetRL) — the agentic direction.

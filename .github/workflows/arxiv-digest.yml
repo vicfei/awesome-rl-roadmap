@@ -1,8 +1,8 @@
-name: Weekly arXiv digest
+name: Daily arXiv digest
 
 on:
   schedule:
-    - cron: "0 2 * * 1" # Mondays 02:00 UTC
+    - cron: "30 5 * * *" # daily 05:30 UTC, after arXiv's morning announcement
   workflow_dispatch: {}
 
 permissions:
@@ -26,6 +26,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No digest changes to commit."
           else
-            git commit -m "digest: weekly arXiv RL-for-LLM update"
+            git commit -m "digest: daily arXiv RL-for-LLM update"
             git push
           fi
