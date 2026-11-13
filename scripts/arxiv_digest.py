@@ -40,17 +40,24 @@ RETRIES = 3
 UA = "awesome-rl-roadmap-digest/0.1 (github.com; contact via repo issues)"
 CATEGORIES = ["cs.CL", "cs.LG", "cs.AI"]
 
-# A paper qualifies when it matches (RL core) AND (LLM side).
+# A paper qualifies when it matches (RL core) AND (LLM side), or when it
+# carries an unambiguous LLM-post-training term (POSTTRAIN) that bypasses
+# the LLM-side requirement (e.g. RLVR papers that never say "LLM").
 RL_CORE = re.compile(
     r"reinforcement learning|\brlhf\b|\bgrpo\b|\brlvr\b|\bdpo\b"
     r"|policy optimization|preference optimization|reward model"
-    r"|verifiable reward|\br1\b|reward shaping|reward hacking",
+    r"|verifiable[ -]reward|\br1\b|reward shaping|reward hacking",
     re.IGNORECASE,
 )
+POSTTRAIN = re.compile(
+    r"\brlhf\b|\bgrpo\b|\brlvr\b|\bdpo\b|verifiable[ -]reward", re.IGNORECASE
+)
 LLM_SIDE = re.compile(
-    r"\bllm\b|\blrms?\b|language model|\breasoning\b|\bagentic?\b"
-    r"|alignment|\bagent|instruction|chat|chain-of-thought|test-time"
-    r"|tool[- ]?use|tool calling|multi-turn|\bmath\b|code generation",
+    # 2026-11-13 tightened: dropped bare "agent"/"chat"/"math"/"code generation"
+    # (classic RL / MARL / control papers kept leaking through them).
+    r"\bllm\b|\blrms?\b|language model|\breasoning\b|\bagentic\b"
+    r"|alignment|instruction|chain-of-thought|test-time"
+    r"|tool[- ]?use|tool calling|multi-turn|\bgpt\b|transformer",
     re.IGNORECASE,
 )
 TAGS = {
@@ -98,7 +105,7 @@ def tags_for(hay: str) -> list[str]:
 
 
 def qualifies(hay: str) -> bool:
-    return bool(RL_CORE.search(hay) and LLM_SIDE.search(hay))
+    return bool(POSTTRAIN.search(hay) or (RL_CORE.search(hay) and LLM_SIDE.search(hay)))
 
 
 def first_author(authors: list[str] | str) -> str:
@@ -199,6 +206,14 @@ def parse_existing(path: Path) -> dict[str, dict]:
     return rows
 
 
+def previous_week_ids(current: Path) -> set[str]:
+    """上一个周文件的 arXiv id 集合——新周文件不再把旧周论文种子进来。"""
+    others = sorted(
+        p for p in DIGEST_DIR.glob("*.md") if p.stem != "README" and p != current
+    )
+    return set(parse_existing(others[-1])) if others else set()
+
+
 def collect_fresh(cutoff: datetime) -> dict[str, dict]:
     fresh: dict[str, dict] = {}
     source = "atom"
@@ -279,12 +294,21 @@ def main() -> int:
 
     DIGEST_DIR.mkdir(parents=True, exist_ok=True)
     week_path = DIGEST_DIR / f"{week}.md"
+    is_new_week = not week_path.exists()
     rows = parse_existing(week_path)
     before = len(rows)
 
     fresh = collect_fresh(cutoff)
     cutoff_ymd = cutoff.date().isoformat()
-    rows.update({k: v for k, v in fresh.items() if v["ymd"] >= cutoff_ymd})
+    # 新周首跑时，Atom/RSS 的回看窗口会带出上一周已归档的论文——跳过，避免跨周重复
+    skip_ids = previous_week_ids(week_path) if is_new_week else set()
+    rows.update(
+        {
+            k: v
+            for k, v in fresh.items()
+            if v["ymd"] >= cutoff_ymd and k not in skip_ids
+        }
+    )
 
     note = f"(Merged {len(rows) - before} new of {len(fresh)} matched.)"
     week_path.write_text(render(rows, week, now, note), encoding="utf-8")
